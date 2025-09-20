@@ -38,4 +38,8 @@ if st.button("Generar simulación"):
     df = pd.DataFrame({
         "Partícula": np.arange(1, len(interarrivals)+1),
         f"Tiempo entre partículas ({unidad})": interarrivals,
-        f"Tiempo acumulado ({unidad})": tiempos_ac_
+        f"Tiempo acumulado ({unidad})": tiempos_acumulados
+    })
+
+    st.write(f"Cantidad de partículas emitidas: {len(interarrivals)}")
+    st.dataframe(df)
