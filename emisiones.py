@@ -5,8 +5,8 @@ import pandas as pd
 st.title("Simulación de emisión de partículas (Poisson)")
 
 # entradas del usuario
-media_total = st.number_input(
-    "Ingrese la media de partículas en el tiempo total (λ):",
+lmbda = st.number_input(
+    "Ingrese la media (λ) de partículas en una unodad de tiempo:",
     min_value=0.1, value=5.0, step=0.1
 )
 
@@ -19,7 +19,7 @@ unidad = st.selectbox("Seleccione la unidad de tiempo:", ["segundos", "minutos",
 
 if st.button("Generar simulación"):
     # tasa de emisión por unidad de tiempo
-    lmbda = media_total / tiempo_total
+    media_total = lmbda * tiempo_total
 
     # simulación
     interarrivals = []
